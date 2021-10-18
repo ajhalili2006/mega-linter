@@ -1,0 +1,17 @@
+gitConfig:
+  core.autocrlf: "true"
+
+tasks:
+  - init: pip3 install -r ./requirements.dev.txt
+
+vscode:
+  # TODO: Synchorize it with values from .vscode/extensions.json/#recommendations
+  extensions:
+    - ms-python.python
+    - stylelint.vscode-stylelint
+    - foxundermoon.shell-format
+    - matangover.mypy
+    - streetsidesoftware.code-spell-checker
+    - esbenp.prettier-vscode
+    - exiasr.hadolint
+    - timonwong.shellcheck
