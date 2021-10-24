@@ -2,10 +2,10 @@ gitConfig:
   core.autocrlf: "true"
 
 tasks:
-  - init: pip3 install -r ./requirements.dev.txt
+  # fix errors when installing packages inside virtualenv
+  - init: sed -i "s/PIP_USER=yes/PIP_USER=no/" ~/.bashrc; source ~/.bashrc; python3 -m venv venv; source venv/bin/activate; python3 -m pip3 install --upgrade pip; pip3 install --upgrade -r requirements.dev.txt
 
 vscode:
-  # TODO: Synchorize it with values from .vscode/extensions.json/#recommendations
   extensions:
     - ms-python.python
     - stylelint.vscode-stylelint
