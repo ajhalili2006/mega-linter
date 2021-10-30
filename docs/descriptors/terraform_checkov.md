@@ -9,7 +9,7 @@
 
 ## checkov documentation
 
-- Version in Mega-Linter: **2.0.492**
+- Version in Mega-Linter: **2.0.524**
 - Visit [Official Web Site](https://www.checkov.io/){target=_blank}
 - See [How to disable checkov rules in files](https://www.checkov.io/2.Basics/Suppressing%20and%20Skipping%20Policies.html){target=_blank}
 - See [Index of problems detected by checkov](https://www.checkov.io/5.Policy%20Index/all.html){target=_blank}
@@ -18,8 +18,8 @@
 
 ## Configuration in Mega-Linter
 
-- Enable checkov by adding `TERRAFORM_CHECKOV` in [ENABLE_LINTERS variable](https://nvuillam.github.io/mega-linter/configuration/#activation-and-deactivation)
-- Disable checkov by adding `TERRAFORM_CHECKOV` in [DISABLE_LINTERS variable](https://nvuillam.github.io/mega-linter/configuration/#activation-and-deactivation)
+- Enable checkov by adding `TERRAFORM_CHECKOV` in [ENABLE_LINTERS variable](https://megalinter.github.io/configuration/#activation-and-deactivation)
+- Disable checkov by adding `TERRAFORM_CHECKOV` in [DISABLE_LINTERS variable](https://megalinter.github.io/configuration/#activation-and-deactivation)
 
 | Variable                                      | Description                                                                                                                                                                                                         | Default value            |
 |-----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------|
@@ -38,18 +38,18 @@
 
 Use checkov in your favorite IDE to catch errors before Mega-Linter !
 
-|                                                                   <!-- -->                                                                   | IDE                                                  | Extension Name                                                                    |                                                                                 Install                                                                                  |
-|:--------------------------------------------------------------------------------------------------------------------------------------------:|------------------------------------------------------|-----------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| <img src="https://github.com/nvuillam/mega-linter/raw/master/docs/assets/icons/vscode.ico" alt="" height="32px" class="megalinter-icon"></a> | [Visual Studio Code](https://code.visualstudio.com/) | [Checkov](https://marketplace.visualstudio.com/items?itemName=Bridgecrew.checkov) | [![Install in VsCode](https://github.com/nvuillam/mega-linter/raw/master/docs/assets/images/btn_install_vscode.png)](vscode:extension/Bridgecrew.checkov){target=_blank} |
+|                                                                   <!-- -->                                                                    | IDE                                                  | Extension Name                                                                    |                                                                                  Install                                                                                  |
+|:---------------------------------------------------------------------------------------------------------------------------------------------:|------------------------------------------------------|-----------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| <img src="https://github.com/megalinter/megalinter/raw/main/docs/assets/icons/vscode.ico" alt="" height="32px" class="megalinter-icon"></a> | [Visual Studio Code](https://code.visualstudio.com/) | [Checkov](https://marketplace.visualstudio.com/items?itemName=Bridgecrew.checkov) | [![Install in VsCode](https://github.com/megalinter/megalinter/raw/main/docs/assets/images/btn_install_vscode.png)](vscode:extension/Bridgecrew.checkov){target=_blank} |
 
 ## Mega-Linter Flavours
 
 This linter is available in the following flavours
 
-|                                                                         <!-- -->                                                                          | Flavor                                                                 | Description                            | Embedded linters |                                                                                                                                                                                       Info |
-|:---------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------|:---------------------------------------|:----------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| <img src="https://github.com/nvuillam/mega-linter/raw/master/docs/assets/images/mega-linter-square.png" alt="" height="32px" class="megalinter-icon"></a> | [all](https://nvuillam.github.io/mega-linter/supported-linters/)       | Default Mega-Linter Flavor             |        94        |                     ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/nvuillam/mega-linter/v4) ![Docker Pulls](https://img.shields.io/docker/pulls/nvuillam/mega-linter) |
-|      <img src="https://github.com/nvuillam/mega-linter/raw/master/docs/assets/icons/terraform.ico" alt="" height="32px" class="megalinter-icon"></a>      | [terraform](https://nvuillam.github.io/mega-linter/flavors/terraform/) | Optimized for TERRAFORM based projects |        45        | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/nvuillam/mega-linter-terraform/v4) ![Docker Pulls](https://img.shields.io/docker/pulls/nvuillam/mega-linter-terraform) |
+|                                                                          <!-- -->                                                                          | Flavor                                                       | Description                            | Embedded linters |                                                                                                                                                                                         Info |
+|:----------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------|:---------------------------------------|:----------------:|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| <img src="https://github.com/megalinter/megalinter/raw/main/docs/assets/images/mega-linter-square.png" alt="" height="32px" class="megalinter-icon"></a> | [all](https://megalinter.github.io/supported-linters/)       | Default Mega-Linter Flavor             |        94        |                     ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/megalinter/megalinter/v5) ![Docker Pulls](https://img.shields.io/docker/pulls/megalinter/megalinter) |
+|      <img src="https://github.com/megalinter/megalinter/raw/main/docs/assets/icons/terraform.ico" alt="" height="32px" class="megalinter-icon"></a>      | [terraform](https://megalinter.github.io/flavors/terraform/) | Optimized for TERRAFORM based projects |        45        | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/megalinter/megalinter-terraform/v5) ![Docker Pulls](https://img.shields.io/docker/pulls/megalinter/megalinter-terraform) |
 
 ## Behind the scenes
 
@@ -76,7 +76,7 @@ checkov --file myfile.tf
 usage: checkov [-h] [-v] [-d DIRECTORY] [-f FILE] [--skip-path SKIP_PATH]
                [--external-checks-dir EXTERNAL_CHECKS_DIR]
                [--external-checks-git EXTERNAL_CHECKS_GIT] [-l]
-               [-o {cli,json,junitxml,github_failed_only,sarif}]
+               [-o {cli,cyclonedx,json,junitxml,github_failed_only,sarif}]
                [--output-bc-ids] [--no-guide] [--quiet] [--compact]
                [--framework {cloudformation,terraform,kubernetes,serverless,arm,terraform_plan,helm,dockerfile,secrets,json,all}]
                [--skip-framework {cloudformation,terraform,kubernetes,serverless,arm,terraform_plan,helm,dockerfile,secrets,json}]
@@ -119,7 +119,7 @@ optional arguments:
                         specify a subdirectory after a double-slash //. cannot
                         be used together with --external-checks-dir
   -l, --list            List checks
-  -o {cli,json,junitxml,github_failed_only,sarif}, --output {cli,json,junitxml,github_failed_only,sarif}
+  -o {cli,cyclonedx,json,junitxml,github_failed_only,sarif}, --output {cli,cyclonedx,json,junitxml,github_failed_only,sarif}
                         Report output format. Can be repeated
   --output-bc-ids       Print Bridgecrew platform IDs (BC...) instead of
                         Checkov IDs (CKV...), if the check exists in the

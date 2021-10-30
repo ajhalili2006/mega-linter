@@ -82,6 +82,7 @@ RUN apk add --update --no-cache \
                 php8-dom \
                 php8-simplexml \
                 composer \
+                ansible \
                 ansible-lint \
                 libc-dev \
                 libxml2-dev \
@@ -293,8 +294,8 @@ LABEL com.github.actions.name="Mega-Linter" \
       org.opencontainers.image.revision=$BUILD_REVISION \
       org.opencontainers.image.version=$BUILD_VERSION \
       org.opencontainers.image.authors="Nicolas Vuillamy <nicolas.vuillamy@gmail.com>" \
-      org.opencontainers.image.url="https://nvuillam.github.io/mega-linter" \
-      org.opencontainers.image.source="https://github.com/nvuillam/mega-linter" \
-      org.opencontainers.image.documentation="https://nvuillam.github.io/mega-linter" \
+      org.opencontainers.image.url="https://megalinter.github.io" \
+      org.opencontainers.image.source="https://github.com/megalinter/megalinter" \
+      org.opencontainers.image.documentation="https://megalinter.github.io" \
       org.opencontainers.image.vendor="Nicolas Vuillamy" \
       org.opencontainers.image.description="Lint your code base with GitHub Actions"
