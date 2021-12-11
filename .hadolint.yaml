@@ -1,7 +1,12 @@
 ignored:
-  - DL3007
-  - DL3016
-  - DL3028
-  - SC2086
-  - SC2039
-  - DL3059
+  - DL3007 # Ignore warnings about using the latest tag as base image.
+  - DL3016 # Pin npm package versions
+  - DL3028 # Pin RubyGems versions
+  - SC2086 # Prevent globbing and word spliting by using double-quotes
+  - SC2039 # in POSIX sh, <something> is undefined
+  - DL3059 # Consider consolidating multiple RUNs
+  - DL3013 # Pin Python package versions in pip
+  - DL4001 # Use either only wget or curl but not both
+  - DL3004 # Don't use sudo, use gosu instead
+  - SC2016 # Absolute WORKDIR
+  - DL3003 # Use WORKDIR to switch dirs
